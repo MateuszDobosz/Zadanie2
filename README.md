@@ -9,8 +9,7 @@
 - http://176.107.131.27:5111/internal/users
 
 ### Permission "read" required: 
-- /public/logs  | /public/logs?from=1584970029449&to=1584970031938 - returns all logs | returns logs from - to (timestamps) headers: {'authorization-token' : 320ca9c4-ed20-4f09-bcb8-9b34b976b501}
-- /public/logs/uuid - returns specified log
+- /public/logs  | /public/logs?from=1584970029449&to=1584970031938 - returns all logs | returns logs from - to (timestamps)
 - http://176.107.131.27:5111/public/logs headers: {'authorization-token' : 320ca9c4-ed20-4f09-bcb8-9b34b976b501}
 - http://176.107.131.27:5111/public/logs?from=1584970029449&to=1584970031938 headers: {'authorization-token' : 320ca9c4-ed20-4f09-bcb8-9b34b976b501}
 - /public/logs/uuid - returns specified log
@@ -21,3 +20,5 @@
 
 ### Only Admin: 
 - /internal/users - creates new user, body: {username: "test", permissions: ["create","read"]}
+- http://176.107.131.27:5111/internal/users  headers: {'authorization-token' : 320ca9c4-ed20-4f09-bcb8-9b34b976b501} body: {"username":"StworzonyPrzezAdmina",
+    "permissions":["read"]
