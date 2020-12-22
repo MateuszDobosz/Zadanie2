@@ -14,7 +14,7 @@
 - http://176.107.131.27:5111/public/logs headers: {'authorization-token' : 320ca9c4-ed20-4f09-bcb8-9b34b976b501}
 - http://176.107.131.27:5111/public/logs?from=1584970029449&to=1584970031938 headers: {'authorization-token' : 320ca9c4-ed20-4f09-bcb8-9b34b976b501}
 - /public/logs/uuid - returns specified log
-http://176.107.131.27:5111/public/logs/511d80fe-493e-482d-8ae1-9d692d904290 headers: {'authorization-token' : 320ca9c4-ed20-4f09-bcb8-9b34b976b501}
+- http://176.107.131.27:5111/public/logs/511d80fe-493e-482d-8ae1-9d692d904290 headers: {'authorization-token' : 320ca9c4-ed20-4f09-bcb8-9b34b976b501}
 
 
 # POST: 
