@@ -5,7 +5,7 @@ import { createConnection } from 'typeorm';
 import { internalRouter, publicRouter } from './routes';
 
 const app = express();
-const port = 3000;
+const port = 5111;
 
 app.use(express.json());
 app.use(bodyParser.json());
