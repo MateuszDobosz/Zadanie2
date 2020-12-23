@@ -22,7 +22,8 @@ const getLogById = async (req: Request, res: Response) => {
 const getLogs = async (req: Request, res: Response) => {
     try {
         let { from, to } = req.query;
-
+        let fromDate: Date;
+        let toDate: Date;
         const logs = [];
 
         const rl = readline.createInterface({
@@ -34,10 +35,9 @@ const getLogs = async (req: Request, res: Response) => {
             logs.push(splitLine(line));
         });
 
-        from ? null : (from = logs[0].timestamp);
-        to ? null : (to = logs[logs.length - 1].timestamp);
-
-        const filteredLogs = logs.filter((log) => log.timestamp >= new Date(parseInt(from.toString())) && log.timestamp <= new Date(parseInt(to.toString())));
+        from ? (fromDate = new Date(parseInt(from.toString()))) : (fromDate = new Date(logs[0].timestamp));
+        to ? (toDate = new Date(parseInt(to.toString()))) : (toDate = new Date(logs[logs.length - 1].timestamp));
+        const filteredLogs = logs.filter((log) => log.timestamp >= fromDate && log.timestamp <= toDate);
         filteredLogs.length !== 0 ? res.status(200).send(filteredLogs) : res.status(500).send({ message: 'Cant find logs with this date' });
     } catch (e) {
         res.status(500).send(e);
